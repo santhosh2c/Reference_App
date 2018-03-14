@@ -280,9 +280,9 @@ sap.ui.define(
 							oEvent.preventDefault();
 						});
 
-						get.hi = "hi";
+						//get.hi = "hi";
 
-						console.log(get.hi);
+						//console.log(get.hi);
 
 						//console.log(Service_URL.getServiceUrl("ZSRV_UI_ECS_ECES"));
 						//this._oView = this.getView();           
