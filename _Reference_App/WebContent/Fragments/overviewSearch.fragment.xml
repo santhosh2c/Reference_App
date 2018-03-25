@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns:core='sap.ui.core' xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified" 	xmlns:c="sap.suite.ui.commons" height="500px" class="dii">
+	
+	<Dialog xmlns="sap.m" xmlns:core="sap.ui.core"
+	 xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	  id="FinaSearchFrag" contentHeight="25rem"
+		  showHeader="Manage Attachment" >
+		
+	  <c:Timeline height="500px" width="30rem" enableDoubleSided="false" 
+          groupBy="XYZ"  showHeaderBar="true"
+             growingThreshold="10" filterTitle="Title" sortOldestFirst="false" 
+                showIcons="false" icon="sap-icon://edit">
+          <!--      	<content>
+			<TimelineItem
+				id="idTemplateItem"
+				dateTime="HireDate"
+				title="Title"
+				text="Notes"
+				userName="FirstName LastName"
+				filterValue="FirstName">
+			</TimelineItem>
+		</content> -->
+               
+               </c:Timeline>
+			
+	</Dialog>
+</core:FragmentDefinition>

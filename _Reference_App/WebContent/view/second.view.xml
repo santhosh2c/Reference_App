@@ -1,65 +1,99 @@
-<a xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
-	controllerName="reference.controller.second" xmlns:f="sap.ui.layout.form" xmlns:u="sap.suite.ui.commons">
-	<Page title="DEMO APP" showHeader="true" class="sapUiContentPadding">
+<a xmlns:mvc="sap.ui.core.mvc"  xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+		controllerName="reference.controller.second" 
+		xmlns:f="sap.ui.layout.form"  xmlns:u="sap.suite.ui.commons">
+	<Page title="DEMO APP" showHeader="true" 	class="sapUiContentPadding" >
 		<content>
-			<Label text="Enter a search term, e.g. “Notebook”, and add matching products as tokens" width="100%" labelFor="multiInput"/>
-			<MultiInput width="500px" id="multiInput" suggestionItems="{ path: '/', sorter: { path: 'Name' } }" showValueHelp="false">
-				<core:Item key="{ProductId}" text="{Name}"/>
-			</MultiInput>
-			<Label text="{oRefModel>/#Customer/City/@unicode}"></Label>
-			<!-- <Input maxLength="path :'EmployeeName' formatter: 'reference.Format.Formatter.number'" /> -->
-			<!--  <Text text="{parts:[{path:'oRefModel>/#Customer/City/@type'}],formatter: 'reference.Format.Formatter.number' }"></Text> -->
-			<!-- <Input maxLength="{parts:[{path:'oRefModel>/#Customer/City/@maxLength'}],formatter: 'reference.Format.Formatter.number' }" /> -->
-			<Input maxLength="{= parseInt(${oRefModel>/#Customer/City/@maxLength}) }"/>
-			<!-- <Input maxLength="{= typeof(${oRefModel>/#Customer/City/@maxlength}) === 'string'  ? 14 : 2}" /> -->
+		
+			<Label text="Enter a search term, e.g. “Notebook”, and add matching products as tokens" width="100%" labelFor="multiInput"/>
+		<MultiInput width="500px"
+			id="multiInput"
+			suggestionItems="{
+				path: '/',
+				sorter: { path: 'Name' }
+			}"
+			showValueHelp="false">
+			<core:Item key="{ProductId}" text="{Name}" />
+		</MultiInput>
+		
+		
+			 <Label text="{oRefModel>/#Customer/City/@unicode}"></Label> 
+			  <!-- <Input maxLength="path :'EmployeeName' formatter: 'reference.Format.Formatter.number'" /> --> 
+			  
+			 <!--  <Text text="{parts:[{path:'oRefModel>/#Customer/City/@type'}],formatter: 'reference.Format.Formatter.number' }"></Text> -->
+		
+          
+           <!-- <Input maxLength="{parts:[{path:'oRefModel>/#Customer/City/@maxLength'}],formatter: 'reference.Format.Formatter.number' }" /> --> 
+           
+           
+           <Input maxLength="{= parseInt(${oRefModel>/#Customer/City/@maxLength}) }" />
+			 <!-- <Input maxLength="{= typeof(${oRefModel>/#Customer/City/@maxlength}) === 'string'  ? 14 : 2}" /> --> 
 			<!-- <Label text="{oRefModel>/Customer/CustomerID}"></Label> -->
 			<Label text="vdsa"></Label>
+			
+			
+			
+			
 			<FlexBox direction="Column" alignItems="Center">
-				<html:div id="divcontainer">
-					<html:p id="divcontent" contenteditable="true">something something</html:p>
-				</html:div>
-				<html:label id="mylabel">something label here</html:label>
-				<html:p id="input" class="inputClass" contenteditable="true">
-					To break lines in a text,use the
-					<html:br></html:br>
-					<html:i>element</html:i>
-				</html:p>
-			</FlexBox>
-			<Button type="Accept" text="Accept" press="onPress" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
-				<layoutData>
-					<FlexItemData growFactor="1"/>
-				</layoutData>
-			</Button>
-			<Button press="batch" text="batch"></Button>
-			<HBox>
-				<Button type="Accept" text="Accept" press="onPress" ariaDescribedBy="acceptButtonDescription genericButtonDescription"></Button>
-			</HBox>
-			<FlexBox direction="Column" alignItems="Center">
-				<html:div id="divinput" contenteditable="true">
-					<html:i>something</html:i>
-					text</html:div>
-			</FlexBox>
-			<Panel visible="true" expandable="false" headerText="Order_Info" expanded="false" width="auto" class="sapUiResponsiveMargin P2" id="panel">
-				<content>
-					<VBox alignItems="Baseline">
-						<HBox alignItems="Center">
-							<items>
-								<Label text="Enter Order Number" labelFor="OrderNo" width="200px"/>
-								<Input id="OrderNo" width="200px"/>
-								<Button text="Submit" type="Accept" press="onSubmit"/>
-								<Label text="Order Number" labelFor="OrderNo" width="200px"/>
-								<Input id="showOrderNo" value="{OrderNo}" width="200px"/>
-								<Label text="AccountNo" width="200px"/>
-								<Input id="showAccNo" value="{AccountNo}" width="200px" editable="false"/>
-								<Label text="Date of Purchase" width="200px"/>
-								<Input id="showDate" value="{Date}" width="200px" editable="false"/>
-								<Label text="Requested For" labelFor="searchField" textAlign="Begin" width="100px"/>
-								<Input id="showRequestedFor1" value="{RequestedFor}" width="300px" textAlign="Center"></Input>
-							</items>
-						</HBox>
-					</VBox>
-				</content>
-			</Panel>
+        <html:div id="divcontainer">
+            <html:p id="divcontent" contenteditable="true">something something</html:p>
+        </html:div>
+        <html:label id="mylabel">something label here</html:label>
+        <html:p id="input" class="inputClass" contenteditable="true">
+                To break lines in a text,use the <html:br></html:br>  
+            <html:i>element</html:i>
+        </html:p>
+    </FlexBox>
+    
+    
+      <Button type="Accept"
+                    text="Accept"
+                    press="onPress"
+                    ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+                <layoutData>
+                    <FlexItemData growFactor="1" />
+                </layoutData>
+            </Button>
+            
+            <Button press="batch" text="batch"> </Button>
+            
+            
+            <HBox>
+            <Button type="Accept"
+                    text="Accept"
+                    press="onPress"
+                    ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+            </Button>
+        </HBox>
+        <FlexBox direction="Column" alignItems="Center">
+        <html:div id="divinput" contenteditable="true" ><html:i>something</html:i> text</html:div>
+
+    </FlexBox>
+    
+    
+    <Panel visible="true" expandable="false" headerText="Order_Info" expanded="false" width="auto" class="sapUiResponsiveMargin P2" id="panel">
+  <content>
+    <VBox alignItems="Baseline">
+      <HBox alignItems="Center">
+        <items>
+          <Label text="Enter Order Number" labelFor="OrderNo" width="200px" />
+          <Input id="OrderNo" width="200px" />
+          <Button text="Submit" type="Accept" press="onSubmit" />
+          <Label text="Order Number" labelFor="OrderNo" width="200px" />
+          <Input id="showOrderNo" value="{OrderNo}" width="200px" />
+          <Label text="AccountNo" width="200px" />
+          <Input id="showAccNo" value="{AccountNo}" width="200px" editable="false" />
+          <Label text="Date of Purchase" width="200px" />
+          <Input id="showDate" value="{Date}" width="200px" editable="false" />
+          <Label text="Requested For" labelFor="searchField" textAlign="Begin" width="100px" />
+          <Input id="showRequestedFor1" value="{RequestedFor}" width="300px" textAlign="Center"></Input>
+        </items>
+      </HBox>
+    </VBox>
+  </content>
+</Panel>
+            
+            
 		</content>
+		
 	</Page>
 </a>

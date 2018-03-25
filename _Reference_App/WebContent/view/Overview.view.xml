@@ -1,327 +1,378 @@
-<a xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
-	controllerName="reference.controller.Overview" xmlns:f="sap.ui.layout.form" xmlns:u="sap.suite.ui.commons">
-	<Page title="DEMO APP" showHeader="true" class="sapUiContentPadding">
-		<content>
-			<CheckBox text="Option a" selected="true" class="red"/>
-			<CheckBox text="Option b"/>
-			<CheckBox text="Option c" selected="true"/>
-			<Button press="openPDF" text="PDF"></Button>
-			<Button text="excel" press="onExport"></Button>
-			<Button text="Message Dialog" width="230px" press="dil" class="sapUiSmallMarginBottom"/>
-			<Button press="invalidate" text="Invalidate"></Button>
-			<Button press="busy" text="busy"></Button>
-			<core:Icon src="sap-icon://pharmacy" class="size2" color="#64E4CE">
-				<core:layoutData>
-					<FlexItemData growFactor="1"/>
-				</core:layoutData>
-			</core:Icon>
-			<Input description="Input description" textFormatter="formatt"></Input>
-			<CheckBox text="Option 2" select="percentCheck"></CheckBox>
-			<Input id="inputPercent"></Input>
-			<!-- 		 <html:div class="background">
-  <html:div class="transbox">
-    <html:p>{{EmployeeName}}</html:p>
-  </html:div>
-</html:div> -->
-			<!-- <html:p>{{{EmployeeName}}}</html:p>  -->
-			<Text text="" id="tex"></Text>
-			<!-- <core:HTML
- content='&lt;div &gt;{i18n&gt;&#123;EmployeeName&#125;&lt;/div&gt;'>
-</core:HTML> -->
-			<!--  <core:HTML id="htmlContent" content="&lt;div&gt;&lt;span&gt;{EmployeeName}&lt;/span&gt;&lt;/div&gt;" /> -->
-			<core:HTML id="myHTML" content="&lt;div&gt;&lt;span&gt;{EmployeeName}&lt;/span&gt;&lt;/div&gt;"/>
-			<HBox>
-				<TextArea id="textA"></TextArea>
-			</HBox>
-			<Button press="addColListItem" text="change Item Table" id="but"></Button>
-			<Button press="displayInputErrors" text="textarea"></Button>
-			<Button text="next page" press="nextPage"></Button>
-			<Button text="scroll" press="onEscapePreventDialog"></Button>
-			<Button text="footer" press="onToggleFooter"></Button>
-			<Select forceSelection="false" change="sel">
-				<core:Item key="ProductId" text="Name"/>
-				<core:Item key="ProdudsfctId" text="Nafweme"/>
-			</Select>
-			<Select id="selSize" forceSelection="false">
-				<core:Item key="ProductId" text="Name"/>
-				<core:Item key="ProdudsfctId" text="Nafweme"/>
-			</Select>
-			<HBox class="inputWrapper">
-				<Input type="text"></Input>
-				<Input type="text"></Input>
-			</HBox>
-			<Button text="Input validate" press="inpValidate"></Button>
-			<DateTimePicker id="DTP1" placeholder="Enter Date ..." change="handleChange"/>
-			<Text text="value" id="value"></Text>
-			<RadioButtonGroup columns="5" valueState="Error" class="sapUiMediumMarginBottom">
-				<buttons>
-					<RadioButton id="RB3-1" text="Option 1"/>
-					<RadioButton id="RB3-2" text="Option 2"/>
-					<RadioButton id="RB3-3" text="Option 3"/>
-				</buttons>
-			</RadioButtonGroup>
-			<u:TimelineItem>
-				<u:embeddedControl>
-					<Text text="First Line\n SecondLine"></Text>
-				</u:embeddedControl>
-			</u:TimelineItem>
-			<ComboBox id="indexCombo" items="{/}">
-				<core:Item key="{key}" text="{EmployeeName}"/>
-			</ComboBox>
-			<Button text="index" press="getIndex"></Button>
-			<Label text="MultiInput in MultiLine Display Mode" labelFor="multiInput1"/>
-			<MultiInput id="multiInput1" width="100%" enableMultiLineMode="true" showValueHelp="false" labelFor="d"/>
-			<VBox>
-				<CheckBox id="ch1" text="Test" selected="false" select="checkDone" value="sfdbk" enabled="true"/>
-				<Button text="Open Dialog" press="dialog"></Button>
-				<Text text=".........................................." class="query"></Text>
-				<Button text="Table Columns" press="tblColumns"></Button>
-				<Switch state="true" change="ReturnedSwitchPress" customTextOn="Yes" customTextOff="No" id="switch"/>
-				<Text text="hikdsgj,.bagkfbsk;gbfj.abfs;gbfjg;dksg;fdsfgdsk." id="text"></Text>
-			</VBox>
-			<ComboBox id="combo" selectedKey="1" selectionChange="combo">
-				<core:Item key="1" text="Txt"/>
-				<core:Item key="2" text="Txt2"/>
-			</ComboBox>
-			<Button text="index" press="getIndex"></Button>
-			<DatePicker change="handleChange" id="datePicker" placeholder=" " valueFormat="yyyy-MM-dd" displayFormat="dd-MMM-yyyy"/>
-			<Button text="press" press="press" id="detach"></Button>
-			<TextArea showExceededText="true" maxLength="250"></TextArea>
-			<Button text="Below table model" press="tableModel"></Button>
-			<Table id="table" items="{path:'/Employees', filters:{path:'FirstName',operator:'StartsWith',value1:'M'},sorter : [{path:'FirstName'}]}"
-				growing="true" growingThreshold="3" growingTriggerText="NEXt" growingScrollToLoad="true" updateStarted="startedTable"
-				updateFinished="finishedTable" tableHeading="FSgs" fixedLayout="false" growingStarted="growingStarted" growingFinished="growingFinished"
-				class="sapUiSizeCompact">
-				<headerToolbar>
-					<Toolbar height='auto'>
-						<content>
-							<VBox>
-								<Text text="Text one "/>
-								<Text text="Text two "/>
-								<Text text="Text three "/>
-								<Text text="Text four "/>
-							</VBox>
-						</content>
-					</Toolbar>
-				</headerToolbar>
-				<columns>
-					<Column>
-						<Label text="Advance Settlement ID" design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Clearing Document No." design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Advance Amount" design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Amount Spent" design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Status" design="Bold"/>
-					</Column>
-				</columns>
-				<items>
-					<ColumnListItem>
-						<Text text="{Address}" class="{Country}"/>
-						<Text text="{ parts : [ { path : 'Country' } ], formatter : '.formatting' } "/>
-						<!-- <Text text="{Country}" /> -->
-						<Text text="{= ${City} === 'Seattle' ? 'a' : 'b'}"/>
-						<Text text="{Extension}"/>
-						<Text text="{FirstName}"/>
-					</ColumnListItem>
-				</items>
-			</Table>
-			<Table id="table1" items="{path:'/Customers'}" growing="true" growingThreshold="3" growingTriggerText="NEXt" growingScrollToLoad="true"
-				updateStarted="startedTable" updateFinished="finishedTable" tableHeading="FSgs" fixedLayout="false" growingStarted="growingStarted"
-				growingFinished="growingFinished" class="sapUiSizeCompact">
-				<headerToolbar>
-					<Toolbar height='auto'>
-						<content>
-							<VBox>
-								<Text text="Text one "/>
-								<Text text="Text two "/>
-								<Text text="Text three "/>
-								<Text text="Text four "/>
-							</VBox>
-						</content>
-					</Toolbar>
-				</headerToolbar>
-				<columns>
-					<Column>
-						<Label text="Advance Settlement ID" design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Clearing Document No." design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Advance Amount" design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Amount Spent" design="Bold"/>
-					</Column>
-					<Column>
-						<Label text="Status" design="Bold"/>
-					</Column>
-				</columns>
-				<items>
-					<ColumnListItem>
-						<Text text="{CustomerID}" class="{CompanyName}"/>
-						<Text text="{ parts : [ { path : 'Country' } ], formatter : '.formatting' } "/>
-						<!-- <Text text="{Country}" /> -->
-						<Text text="{= ${City} === 'Seattle' ? 'a' : 'b'}"/>
-						<Text text="{Phone}"/>
-						<Text text="{Country}"/>
-					</ColumnListItem>
-				</items>
-			</Table>
-			<Table id="table2" headerText="Products">
-				<columns>
-					<Column mergeDuplicates="true">
-						<header>
-							<Text text="Supplier"/>
-						</header>
-					</Column>
-					<Column mergeDuplicates="true" minScreenWidth="Tablet" demandPopin="true">
-						<header>
-							<Text text="Product"/>
-						</header>
-					</Column>
-					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
-						<header>
-							<Text text="Dimensions"/>
-						</header>
-					</Column>
-					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
-						<header>
-							<Text text="Weight"/>
-						</header>
-					</Column>
-					<Column hAlign="Right">
-						<header>
-							<Text text="Price"/>
-						</header>
-					</Column>
-				</columns>
-				<ColumnListItem>
-					<Text text="SupplierName"/>
-					<ObjectIdentifier title="Name" text="ProductId" class="sapMTableContentMargin"/>
-					<Text text="Width x Depth x Height DimUnit"/>
-					<ObjectNumber number="1" unit="WeightUnit"/>
-					<ObjectNumber number="Price" unit="CurrencyCode"/>
-				</ColumnListItem>
-			</Table>
-			<f:SimpleForm id="form" layout="ResponsiveGridLayout" editable="true" labelSpanXL="6" labelSpanL="6" labelSpanM="7" labelSpanS="6"
-				adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" columnsS="1"
-				singleContainerFullSize="false" class="header-panel">
-				<f:content>
-					<core:Title text=""/>
-					<Label text="Employee ID" design="Bold"></Label>
-					<Text text="{ path: 'EmployeeID', formatter: 'reference.Format.Formatter.decimal'}"></Text>
-					<Label text="Employee Name" design="Bold"/>
-					<Text text="{Address}"></Text>
-					<Label text="start time" design="Bold"/>
-					<Text text="{Starttime}"/>
-					<core:Title text="" class="remove-space"/>
-					<Table id="sss" items="{/Employees}">
-						<columns>
-							<Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline">
-								<Label text="Month and year " design="Bold"/>
-							</Column>
-							<Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline">
-								<Label text="Division" design="Bold"/>
-							</Column>
-							<Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline">
-								<Label text="Primary Sales %" design="Bold"/>
-							</Column>
-							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
-								<Label text="Secondary Sales %" design="Bold"/>
-							</Column>
-						</columns>
-						<items>
-							<ColumnListItem >
-								<cells>
-									<Text text="{Address}"/>
-									<Text text="{ZCRM_PDIV_T}"/>
-									<Text text="{A00O2TLYKTOHDT02KCFC25VO7P_F}"/>
-									<Text text="{A00O2TLYKTOHDT02KEXQTO9JZF_F}"/>
-								</cells>
-							</ColumnListItem>
-						</items>
-					</Table>
-					<!-- <Label text="i18n>Designation" design="Bold"/>
-						<Text text="Designationtxt"></Text>
-						<Label text="i18n>WorkLevel" design="Bold"></Label>
-						<Text text="Workleveltxt"></Text>
-						<core:Title text="" class="remove-space" />
-						<Label text="i18n>EmployeeID" design="Bold"></Label>
-						<Text text="EmployeeID" ></Text>
-						<Label text="i18n>EmployeeName" design="Bold"/>
-						<Text text="EmployeeName"></Text>
-						<Label text="i18n>Designation" design="Bold"/>
-						<Text text="Designationtxt"></Text>
-						<Label text="i18n>WorkLevel" design="Bold"></Label>
-						<Text text="Workleveltxt"></Text> -->
-				</f:content>
-			</f:SimpleForm>
-			<f:SimpleForm id="form2" layout="ResponsiveGridLayout" editable="true" labelSpanXL="6" labelSpanL="6" labelSpanM="7" labelSpanS="6"
-				adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" columnsS="1"
-				singleContainerFullSize="false" class="header-panel">
-				<f:content>
-					<core:Title text="" class="remove-space"/>
-					<Label text="Employee Palce" design="Bold"></Label>
-					<Text text="{EmployeePlace}"></Text>
-					<Label text="Employee Number" design="Bold"/>
-					<Text text="{EmployeeNumber}"></Text>
-				</f:content>
-			</f:SimpleForm>
-			<Label text="Any character" class="sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip="Any character"/>
-			<MaskInput mask="---" placeholderSymbol="_" placeholder="Enter text">
-				<rules>
-					<MaskInputRule maskFormatSymbol="-" regex="[/^\d+$/]"/>
-					<!-- above reg exp only for number -->
-				</rules>
-			</MaskInput>
-			<FormattedText htmlText="&lt;h1&gt;Welcome&lt;/h1&gt;" id="ft"/>
-			<Label text="date" labelFor="one"></Label>
-			<Input id="one" type="Number" change="strip"></Input>
-			<MessageStrip visible="false" id="stripmsg" text="Success with default icon and close button:" type="Success" showCloseButton="true"
-				class="sapUiMediumMarginBottom"></MessageStrip>
-			<Label text="date" labelFor="two"></Label>
-			<Input id="two" class="cls"></Input>
-			<Text id="date" text="{ path: '/date', type: 'sap.ui.model.type.Date', formatOptions: { pattern : 'dd/MM/YYYY' } }"/>
-			<HBox>
-				<DatePicker change="handleChange" id="date1" class="dates" placeholder=" " valueFormat="yyyy-MM-dd" displayFormat="dd-MMM-yyyy"/>
-				<Label text="getDate" labelFor="getDate"></Label>
-				<Input type="text" id="getDate" value="{path: '/date', type: 'sap.ui.model.type.Date', formatOptions: {pattern : 'dd/MM/YYYY'}}"></Input>
-			</HBox>
-			<Label text="textarea"></Label>
-			<TextArea value=""></TextArea>
-			<!-- <List id="table"
-		headerText="Products"
-		items="{
-			path: '/'
-		}" >
-			<CustomListItem type="Inactive">
-    <CheckBox text="{City}" press="onSelectionChange" showMarkers="true"/>
-</CustomListItem>
-	</List>
-			 -->
-			<Panel headerText="EmployeeDetails" expandable="true" expanded="true" id="panel">
-				<Label text="hi"></Label>
-				<Text text="hi"></Text>
-			</Panel>
-			<Button text="Press" press="button" id="btn" ariaDescribedBy="button"></Button>
-			<html:hr></html:hr>
-		</content>
-		<footer id="foot">
-			<OverflowToolbar id="too">
-				<Button icon="sap-icon://message-popup" text="{/messagesLength}" type="Emphasized" press="onMessageButtonPress"
-					visible="{= !!${/messagesLength}}"/>
-				<ToolbarSpacer/>
-				<Button type="Accept" text="Accept"/>
-				<Button type="Reject" text="Reject"/>
-			</OverflowToolbar>
-		</footer>
-	</Page>
+<a xmlns:mvc="sap.ui.core.mvc"  xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+   controllerName="reference.controller.Overview" 
+   xmlns:f="sap.ui.layout.form"  xmlns:u="sap.suite.ui.commons" xmlns:l="sap.ui.layout">
+   <Page title="DEMO APP" showHeader="true" 	class="sapUiContentPadding" >
+      <content>
+         <CheckBox text="Option a" selected="true" class="red"/>
+         <CheckBox text="Option b" />
+         <CheckBox text="Option c" selected="true" />
+         <Button press="openPDF" text="PDF"></Button>
+         <Button text="excel" press="onExport"></Button>
+         <Button text="Timeline Frag" press="openTimeline"></Button>
+         <Button
+            text="Message Dialog"
+            width="230px"
+            press="dil"
+            class="sapUiSmallMarginBottom" />
+         <Button press="invalidate" text="Invalidate"></Button>
+         <Button press="busy" text="busy"></Button>
+         <core:Icon
+            src="sap-icon://pharmacy"
+            class="size2"
+            color="#64E4CE" >
+            <core:layoutData>
+               <FlexItemData growFactor="1" />
+            </core:layoutData>
+         </core:Icon>
+         <Input  description="Input description" textFormatter="formatt"></Input>
+         <CheckBox text="Option 2" select="percentCheck">
+         </CheckBox>
+         <Input  id="inputPercent" ></Input>
+         <!-- 		 <html:div class="background">
+            <html:div class="transbox">
+              <html:p>{{EmployeeName}}</html:p>
+            </html:div>
+            </html:div> -->
+         <!-- <html:p>{{{EmployeeName}}}</html:p>  -->
+         <Text text="" id="tex"></Text>
+         <!-- <core:HTML
+            content='&lt;div &gt;{i18n&gt;&#123;EmployeeName&#125;&lt;/div&gt;'>
+            </core:HTML> -->
+         <!--  <core:HTML id="htmlContent" content="&lt;div&gt;&lt;span&gt;{EmployeeName}&lt;/span&gt;&lt;/div&gt;" /> -->
+         <core:HTML id="myHTML" content="&lt;div&gt;&lt;span&gt;{EmployeeName}&lt;/span&gt;&lt;/div&gt;" />
+         <HBox>
+            <TextArea id="textA"></TextArea>
+         </HBox>
+         <Button press="addColListItem" text="change Item Table" id="but"></Button>
+         <Button press="displayInputErrors" text="textarea" ></Button>
+         <Button text="next page" press="nextPage"></Button>
+         <Button text="scroll" press="onEscapePreventDialog"></Button>
+         <Button text="footer" press="onToggleFooter"></Button>
+         <Select
+            forceSelection="false"
+            change="sel"
+            >
+            <core:Item key="ProductId" text="Name" />
+            <core:Item key="ProdudsfctId" text="Nafweme" />
+         </Select>
+         <Select
+            id = "selSize"
+            forceSelection="false"
+            >
+            <core:Item key="ProductId" text="Name" />
+            <core:Item key="ProdudsfctId" text="Nafweme" />
+         </Select>
+         <HBox  class="inputWrapper">
+            <Input type="text"></Input> 
+            <Input type="text"></Input>
+         </HBox>
+         <Button text="Input validate" press="inpValidate"></Button>
+         <DateTimePicker
+            id="DTP1"
+            placeholder="Enter Date ..."
+            change="handleChange"/>
+         <Text text="value" id="value"></Text>
+         <RadioButtonGroup columns="5" valueState="Error" class="sapUiMediumMarginBottom">
+            <buttons>
+               <RadioButton id="RB3-1" text="Option 1"/>
+               <RadioButton id="RB3-2" text="Option 2"/>
+               <RadioButton id="RB3-3" text="Option 3"/>
+            </buttons>
+         </RadioButtonGroup>
+         <u:TimelineItem>
+            <u:embeddedControl>
+               <Text text="First Line\n SecondLine"></Text>
+            </u:embeddedControl>
+         </u:TimelineItem>
+         <ComboBox id="indexCombo" items="{/}">
+            <core:Item key="{key}" text="{EmployeeName}" />
+         </ComboBox>
+         <Button text="index" press="getIndex"></Button>
+         <Label text="MultiInput in MultiLine Display Mode" labelFor="multiInput1"/>
+            <MultiInput id="multiInput1" width="100%" enableMultiLineMode="true" showValueHelp="false" labelFor="d"/>
+            <VBox>
+               <CheckBox id="ch1" text="Test" selected="false" select ="checkDone" value="sfdbk" enabled="true" />
+               <Button text="Open Dialog" press="dialog"></Button>
+               <Text text=".........................................." class="query" ></Text>
+               <Button text="Table Columns" press="tblColumns"></Button>
+               <Switch state="true" change="ReturnedSwitchPress" customTextOn="Yes" customTextOff="No" id="switch" />
+               <Text text="hikdsgj,.bagkfbsk;gbfj.abfs;gbfjg;dksg;fdsfgdsk." id="text"></Text>
+            </VBox>
+            <ComboBox id="combo"  selectedKey="1" selectionChange="combo">
+               <core:Item key="1" text="Txt" />
+               <core:Item key="2" text="Txt2" />
+            </ComboBox>
+            <Button text="index" press="getIndex"></Button>
+            <DatePicker change="handleChange" id="datePicker" 
+               placeholder=" "  valueFormat = "yyyy-MM-dd" displayFormat = "dd-MMM-yyyy"/>
+            <Button text="press" press="press" id="detach"></Button>
+            <TextArea showExceededText="true" maxLength="250"></TextArea>
+            <Button text="Below table model" press="tableModel"></Button>
+            <Table id="table" items="{path:'/Employees', filters:{path:'FirstName',operator:'StartsWith',value1:'M'},sorter : [{path:'FirstName'}]}" growing="true" growingThreshold="3" growingTriggerText="NEXt" growingScrollToLoad="true"
+               updateStarted="startedTable" updateFinished="finishedTable" tableHeading="FSgs" fixedLayout="false"
+               growingStarted="growingStarted" growingFinished="growingFinished" class="sapUiSizeCompact">
+               <headerToolbar>
+                  <Toolbar height='auto'>
+                     <content>
+                        <VBox>
+                           <Text text="Text one " />
+                           <Text text="Text two " />
+                           <Text text="Text three " />
+                           <Text text="Text four " />
+                        </VBox>
+                     </content>
+                  </Toolbar>
+               </headerToolbar>
+               <columns>
+                  <Column>
+         <Label text="Advance Settlement ID" design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Clearing Document No." design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Advance Amount" design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Amount Spent" design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Status" design="Bold"/>
+         </Column>
+         </columns>
+         <items>
+         <ColumnListItem>
+         <Text text="{Address}" class="{Country}"/>
+         <Text text="{ parts : [ { path : 'Country' } ], formatter : '.formatting' }  " />  
+         <!-- <Text text="{Country}" /> --> 
+         <Text text="{= ${City} === 'Seattle' ? 'a' : 'b'}" />
+         <Text text="{Extension}" />
+         <Text text="{FirstName}" />
+         </ColumnListItem>
+         </items>
+         </Table>  
+         <Table id="table1" items="{path:'/Customers'}" growing="true" growingThreshold="3" growingTriggerText="NEXt" growingScrollToLoad="true"
+            updateStarted="startedTable" updateFinished="finishedTable" tableHeading="FSgs" fixedLayout="false"
+            growingStarted="growingStarted" growingFinished="growingFinished" class="sapUiSizeCompact">
+         <headerToolbar>
+         <Toolbar height='auto'>
+         <content>
+         <VBox>
+         <Text text="Text one " />
+         <Text text="Text two " />
+         <Text text="Text three " />
+         <Text text="Text four " />
+         </VBox>
+         </content>
+         </Toolbar>
+         </headerToolbar>
+         <columns>
+         <Column>
+         <Label text="Advance Settlement ID" design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Clearing Document No." design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Advance Amount" design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Amount Spent" design="Bold"/>
+         </Column>
+         <Column>
+         <Label text="Status" design="Bold"/>
+         </Column>
+         </columns>
+         <items>
+         <ColumnListItem>
+         <Text text="{CustomerID}" class="{CompanyName}"/>
+         <Text text="{ parts : [ { path : 'Country' } ], formatter : '.formatting' }  " />  
+         <!-- <Text text="{Country}" /> --> 
+         <Text text="{= ${City} === 'Seattle' ? 'a' : 'b'}" />
+         <Text text="{Phone}" />
+         <Text text="{Country}" />
+         </ColumnListItem>
+         </items>
+         </Table> 	
+         <Table id="table2"
+            headerText="Products">
+         <columns>
+         <Column mergeDuplicates="true">
+         <header>
+         <Text text="Supplier" />
+         </header>
+         </Column>
+         <Column mergeDuplicates="true"  minScreenWidth="Tablet"
+            demandPopin="true">
+         <header>
+         <Text text="Product" />
+         </header>
+         </Column>
+         <Column
+            minScreenWidth="Tablet"
+            demandPopin="true"
+            hAlign="Right" >
+         <header>
+         <Text text="Dimensions" />
+         </header>
+         </Column>
+         <Column
+            minScreenWidth="Tablet"
+            demandPopin="true"
+            hAlign="Center" >
+         <header>
+         <Text text="Weight" />
+         </header>
+         </Column>
+         <Column hAlign="Right" >
+         <header>
+         <Text text="Price" />
+         </header>
+         </Column>
+         </columns>
+         <ColumnListItem>
+         <Text text="SupplierName" />
+         <ObjectIdentifier title="Name" text="ProductId" class="sapMTableContentMargin" />
+         <Text text="Width x Depth x Height DimUnit" />
+         <ObjectNumber
+            number="1" unit="WeightUnit" />
+         <ObjectNumber
+            number="Price"
+            unit="CurrencyCode" />
+         </ColumnListItem>
+         </Table>
+         <f:SimpleForm id="form" layout="ResponsiveGridLayout" editable="true"
+            labelSpanXL="6" labelSpanL="6" labelSpanM="7" labelSpanS="6"
+            adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1"
+            emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" columnsS="1" 
+            singleContainerFullSize="false" class="header-panel">
+         <f:content>
+         <core:Title text="" />
+         <Label text="Employee ID" design="Bold"></Label>
+         <Text text="{ path: 'EmployeeID', formatter: 'reference.Format.Formatter.decimal'}" ></Text>
+         <Label text="Employee Name" design="Bold"/>
+         <Text text="{Address}"></Text>
+         <Label text="start time" design="Bold"/>            
+         <Text text="{Starttime}" /> 
+         <core:Title text="" class="remove-space" />
+         <Table id="sss" items="{/Employees}" >
+         <columns>
+         <Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" >
+         <Label text="Month and year " design="Bold"/>
+         </Column>
+         <Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" >
+         <Label text="Division" design="Bold"/>
+         </Column>
+         <Column minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" >
+         <Label text="Primary Sales %" design="Bold"/>
+         </Column>
+         <Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" >
+         <Label text="Secondary Sales %" design="Bold"/>
+         </Column>
+         </columns>
+         <items>
+         <ColumnListItem >
+         <cells>
+         <Text text="{Address}" />
+         <Text text="{ZCRM_PDIV_T}" />
+         <Text text="{A00O2TLYKTOHDT02KCFC25VO7P_F}" />
+         <Text text="{A00O2TLYKTOHDT02KEXQTO9JZF_F}" />
+         </cells>
+         </ColumnListItem>
+         </items>
+         </Table>	
+         <!-- <Label text="i18n>Designation" design="Bold"/>
+            <Text text="Designationtxt"></Text>
+            <Label text="i18n>WorkLevel" design="Bold"></Label>
+            <Text text="Workleveltxt"></Text>
+            <core:Title text="" class="remove-space" />
+            <Label text="i18n>EmployeeID" design="Bold"></Label>
+            <Text text="EmployeeID" ></Text>
+            <Label text="i18n>EmployeeName" design="Bold"/>
+            <Text text="EmployeeName"></Text>
+            <Label text="i18n>Designation" design="Bold"/>
+            <Text text="Designationtxt"></Text>
+            <Label text="i18n>WorkLevel" design="Bold"></Label>
+            <Text text="Workleveltxt"></Text> -->
+         </f:content>
+         </f:SimpleForm>  
+         <f:SimpleForm id="form2" layout="ResponsiveGridLayout" editable="true"
+            labelSpanXL="6" labelSpanL="6" labelSpanM="7" labelSpanS="6"
+            adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1"
+            emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" columnsS="1" 
+            singleContainerFullSize="false" class="header-panel">
+         <f:content>
+         <core:Title text="" class="remove-space" />
+         <Label text="Employee Palce" design="Bold"></Label>
+         <Text text="{EmployeePlace}" ></Text>
+         <Label text="Employee Number" design="Bold"/>
+         <Text text="{EmployeeNumber}"></Text>
+         </f:content>
+         </f:SimpleForm>  
+         <Label text = "Any character" class = "sapUiSmallMarginTop sapUiTinyMarginBottom" tooltip = "Any character"/>
+            <MaskInput mask = "---" placeholderSymbol = "_" placeholder = "Enter text" >
+               <rules>
+                  <MaskInputRule maskFormatSymbol = "-" regex = "[/^\d+$/]"/>
+                  <!-- above reg exp only for number -->
+               </rules>
+            </MaskInput>
+            <FormattedText htmlText="&lt;h1&gt;Welcome&lt;/h1&gt;" id="ft"/>
+         <Label text="date" labelFor="one"></Label>
+         <Input id="one" type="Number" change="strip"></Input>
+         <MessageStrip
+            visible="false"
+            id="stripmsg"
+            text="Success with default icon and close button:"
+            type="Success"
+            showCloseButton="true"
+            class="sapUiMediumMarginBottom">
+         </MessageStrip>
+         <Label text="date" labelFor="two"></Label>
+         <Input id="two" class="cls"></Input>
+         <Text id="date" text="{
+            path: '/date',
+            type: 'sap.ui.model.type.Date',
+            formatOptions: {
+            pattern : 'dd/MM/YYYY'
+            }
+            }" />
+         <HBox>
+            <DatePicker change="handleChange" id="date1" class="dates" 
+               placeholder=" "  valueFormat = "yyyy-MM-dd" displayFormat = "dd-MMM-yyyy"/>
+            <Label text="getDate" labelFor="getDate"></Label>
+            <Input type="text" id="getDate" value="{path: '/date', type: 'sap.ui.model.type.Date',
+               formatOptions: {pattern : 'dd/MM/YYYY'}}" ></Input>
+         </HBox>
+         <Label text="textarea"></Label>
+         <TextArea value=""></TextArea>
+         <!-- <List id="table"
+            headerText="Products"
+            items="{
+            	path: '/'
+            }" >
+            	<CustomListItem type="Inactive">
+              <CheckBox text="{City}" press="onSelectionChange" showMarkers="true"/>
+            </CustomListItem>
+            </List>
+            	 -->
+         <Panel headerText="EmployeeDetails" expandable="true" expanded="true" id="panel">
+            <Label text="hi"></Label>
+            <Text text="hi"></Text>
+         </Panel>
+         <Button text="Press" press="button" id="btn" ariaDescribedBy="button"></Button>
+         <html:hr></html:hr>
+      </content>
+      <footer id="foot">
+         <OverflowToolbar id="too">
+            <Button icon="sap-icon://message-popup"
+               text="{/messagesLength}"
+               type="Emphasized"
+               press="onMessageButtonPress"
+               visible="{= !!${/messagesLength}}"/>
+            <ToolbarSpacer/>
+            <Button type="Accept" text="Accept"/>
+            <Button type="Reject" text="Reject"/>
+         </OverflowToolbar>
+      </footer>
+   </Page>
 </a>
